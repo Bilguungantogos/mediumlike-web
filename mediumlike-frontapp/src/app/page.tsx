@@ -10,9 +10,9 @@ export default function Home() {
       <Header />
       <div className="w-full h-full">
         <div className=" w-full h-[80vh] bg-slate-100">
-          <ArticleCards />
-          <Button>Hi</Button>
-          <Editor />
+          <div className="max-w-[1000px] mx-auto py-20">
+            <Editor />
+          </div>
         </div>
       </div>
     </>

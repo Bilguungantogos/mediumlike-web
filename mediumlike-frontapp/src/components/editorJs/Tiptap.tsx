@@ -16,13 +16,13 @@ const Tiptap = ({
     extensions: [
       StarterKit.configure(),
       Heading.configure({
-        HTMLAttributes: { class: "text-xl font-bold", levels: [2] },
+        HTMLAttributes: { class: "text-xl", levels: [2] },
       }),
     ],
     content: description,
     editorProps: {
       attributes: {
-        class: "rounded-md border min-h-[150px] border-input",
+        class: "min-h-[150px] ",
       },
     },
     onUpdate({ editor }) {
@@ -31,9 +31,9 @@ const Tiptap = ({
   });
 
   return (
-    <div>
-      <Toolbar editor={editor} />
+    <div className="">
       <EditorContent editor={editor} />
+      <Toolbar editor={editor} />
     </div>
   );
 };

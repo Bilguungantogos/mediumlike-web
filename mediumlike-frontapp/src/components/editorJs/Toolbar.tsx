@@ -23,40 +23,58 @@ const Toolbar = ({ editor }: Props) => {
   return (
     <div className="border border-input bg-transparent rounded-br-md">
       <Toggle
-        size="sm"
+        size="lg"
         pressed={editor.isActive("heading")}
         onPressedChange={() => {
           editor.chain().focus().toggleHeading({ level: 2 }).run();
         }}
       >
-        <Heading2 size={4} />
+        <Heading2 size={20} />
       </Toggle>
       <Toggle
-        size="sm"
+        size="lg"
         pressed={editor.isActive("bold")}
         onPressedChange={() => {
           editor.chain().focus().toggleBold().run();
         }}
       >
-        <Bold size={4} />
+        <Bold size={20} />
       </Toggle>
       <Toggle
-        size="sm"
+        size="lg"
         pressed={editor.isActive("italic")}
         onPressedChange={() => {
           editor.chain().focus().toggleItalic().run();
         }}
       >
-        <Heading2 size={4} />
+        <Italic size={20} />
       </Toggle>
       <Toggle
-        size="sm"
+        size="lg"
         pressed={editor.isActive("strike")}
         onPressedChange={() => {
           editor.chain().focus().toggleStrike().run();
         }}
       >
-        <Heading2 size={4} />
+        <Strikethrough size={20} />
+      </Toggle>
+      <Toggle
+        size="lg"
+        pressed={editor.isActive("bulletList")}
+        onPressedChange={() => {
+          editor.chain().focus().toggleBulletList().run();
+        }}
+      >
+        <List size={20} />
+      </Toggle>
+      <Toggle
+        size="lg"
+        pressed={editor.isActive("orderedList")}
+        onPressedChange={() => {
+          editor.chain().focus().toggleOrderedList().run();
+        }}
+      >
+        <ListOrdered size={20} />
       </Toggle>
     </div>
   );

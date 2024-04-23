@@ -19,16 +19,14 @@ import Tiptap from "./Tiptap";
 
 const Editor = () => {
   const formSchema = z.object({
-    title: z
-      .string()
-      .min(5, { message: "not long enough" })
-      .max(100, { message: "too long" }),
+    title: z.string(),
+    //   .min(5, { message: "not long enough" })
+    //   .max(100, { message: "too long" })
     price: z.number().min(5, { message: "aaa" }),
-    description: z
-      .string()
-      .min(5, { message: "not long enough" })
-      .max(100, { message: "too long" })
-      .trim(),
+    description: z.string(),
+    //   .min(5, { message: "not long enough" })
+    //   .max(100, { message: "too long" })
+    //   .trim(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -49,19 +47,19 @@ const Editor = () => {
     <div>
       {" "}
       <Form {...form}>
-        <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="space-y-8 " onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input
+                    placeholder="Title"
+                    {...field}
+                    className="text-[40px] border-none focus:outline-none py-8"
+                  />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -71,13 +69,9 @@ const Editor = () => {
             name="description"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
                 <FormControl>
                   <Tiptap description={field.value} onChange={field.onChange} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
