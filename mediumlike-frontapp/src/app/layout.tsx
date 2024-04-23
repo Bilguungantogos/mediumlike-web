@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import "./globals.css";
+import "@radix-ui/themes/styles.css";
 import localFont from "next/font/local";
 
 const sfPRO = localFont({
